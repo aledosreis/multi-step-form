@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple-mid: #633bbc;
+  --purple-light: #8257e5;
+  --white: #ffffff;
+  --gray-100: #e1e1e6;
+  --gray-200: #8d8d99;
+  --gray-300: #7c7c8a;
+  --gray-400: #323238;
+  --success-color: #1d8841;
+}
+
+body,
+textarea {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  background: var(--white);
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 600px;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: 0.375rem;
+  padding: 2rem;
+}
+
+.form-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+span {
+  color: var(--gray-200);
+  font-weight: 700;
+}
+
+span::before {
+  content: attr(data-step);
+  background: var(--gray-100);
+  color: var(--gray-200);
+  padding: 0.5rem 0.8rem;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+}
+
+span.current,
+span.done {
+  color: var(--gray-400);
+}
+
+span.current::before {
+  background: var(--purple-mid);
+  color: var(--white);
+}
+
+span.done::before {
+  content: "\2713";
+  background: var(--success-color);
+  color: var(--white);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-100);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  background: var(--purple-mid);
+  border: 0;
+  border-radius: 0.375rem;
+  padding: 1rem 2rem;
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-left: auto;
+  transition: background 0.2s;
+}
+
+button:not(#outline):hover {
+  background: var(--purple-light);
+}
+
+#outline {
+  background: transparent;
+  color: var(--purple-mid);
+  border: 1px solid var(--purple-mid);
+  margin: initial;
+}
+
+.hidden {
+  display: none;
+}
